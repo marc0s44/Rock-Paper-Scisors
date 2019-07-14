@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+            function computerPlay() {
+                let randomNumber = Math.floor((Math.random() * 3) + 1);
+                if(randomNumber === 1) {
+                    return "Rock";
+                }
+                else if(randomNumber === 2) {
+                    return "Paper";
+                }
+                else {
+                    return "Scissors";
+                }
+            }
+            let playerPoints = 0;
+            let computerPoints = 0;
+            function playRound(playerSelection, computerSelection) {
+                console.log("Computer: " + computerSelection);
+                console.log("You: " + playerSelection);
+                //when player wins
+              if((playerSelection==="Paper" && computerSelection === "Rock") || (playerSelection==="Scissors" && computerSelection === "Paper") || 
+              (playerSelection==="Rock" && computerSelection==="Scissors")) {
+                ++playerPoints;
+                if(playerSelection==="Paper") {
+                    return "Paper beats Rock. You get 1 point";
+                }
+                else if(playerSelection==="Scissors") {
+                    return "Scissors beat Paper. You get 1 point";
+                }
+                else {
+                    return "Rock beats Scissors. You get 1 point";
+                }
+              }
+              //when guesses are the same
+              else if(playerSelection === computerSelection) {
+                return "Your guesses are the same. No one get a point";
+              }
+              //when computer wins
+              else {
+                ++computerPoints;
+                if(computerSelection==="Paper") {
+                    return "Paper beats Rock. Computer gets 1 point";
+                }
+                else if(computerSelection==="Scissors") {
+                    return "Scissors beat Paper. Computer gets 1 point";
+                }
+                else {
+                    return "Rock beats Scissors. Computer gets 1 point";
+                }
+              }
+            }
+            function game() {
+                let playerGuess;
+                for(let i = 0; i<3; ++i){
+                    do{
+                    playerGuess = prompt("Take your guess: ", "Rock, Paper or Scissors");
+                    }while(handleGuess(playerGuess) !== 'Rock' && handleGuess(playerGuess) !== 'Scissors' && handleGuess(playerGuess) !== 'Paper')
+                    let result = playRound(handleGuess(playerGuess), computerPlay());
+                    console.log(result);
+                    if(result === "Your guesses are the same. No one get a point") {
+                        --i;
+                    }
+        
+                }
+            }
+            function handleGuess (guess) {
+                let handledGuess = guess.toLowerCase();
+                return handledGuess.charAt(0).toUpperCase() + handledGuess.slice(1);
+            }
+            game();
+            console.log("You have: " + playerPoints + " points");
+            console.log("Computer has " + computerPoints + " points");
+            </script>
+</head>
+<body>
+    
+</body>
+</html>
