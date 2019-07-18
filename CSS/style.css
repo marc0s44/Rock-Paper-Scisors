@@ -1,0 +1,54 @@
+html {
+    background: url(https://image.freepik.com/free-photo/old-grunge-dark-textured-wooden-background-surface-old-brown-wood-texture_7182-333.jpg) 
+    no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+  }
+button {
+    width: 100px;
+    height: 100px;
+    margin: 0.5em;
+    border-radius: 5px;
+}
+#rock {
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjTRS_SqgwYvW1mSNU4HnyApNdi8vf1lmFxlWaV2OlOD4Hgt2y) no-repeat center center;
+    background-size: contain;
+    background-color: white;
+}
+#paper {
+    background: url(https://previews.123rf.com/images/taesmileland/taesmileland1210/taesmileland121000034/15741972-notebook-paper-drawing.jpg) no-repeat
+    center center;
+    background-size: contain;
+    background-color: white;
+}
+#scissors {
+    background: url(https://res.cloudinary.com/teepublic/image/private/s--G4dg3iZY--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1492809809/production/designs/1500045_1.jpg)
+                no-repeat center center;
+    background-size: contain;
+    background-color: white;
+}
+.buttons {
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin-right: 5%;
+    margin-top: 2%; 
+}
+button:hover {
+    transform: scale(1.2);
+}
+.informationAboutGame {
+    position: absolute;
+    float: left;
+    width: 30%;
+    text-align: justify;
+    margin-top: 1em;
+    margin-left: 2em;
+    border: 3px solid grey;
+    padding: 1em;
+    border-radius: 30px;
+}
+p {
+    color: darkgray;
+}
