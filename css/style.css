@@ -30,7 +30,6 @@ button {
 }
 .buttons {
     display: inline-block;
-    position: relative;
     float: right;
     margin-right: 5%;
     margin-top: 2%; 
@@ -39,7 +38,6 @@ button:hover {
     transform: scale(1.2);
 }
 .informationAboutGame {
-    position: absolute;
     float: left;
     width: 30%;
     text-align: justify;
@@ -51,4 +49,9 @@ button:hover {
 }
 p {
     color: darkgray;
+}
+#startGame {
+    display: inline-block;
+    margin-top: 2%;
+    margin-left: 8em;
 }
