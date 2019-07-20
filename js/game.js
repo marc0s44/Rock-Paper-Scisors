@@ -1,6 +1,8 @@
 let playerScore = 0;
 let computerScore = 0;
 const winningScore = 5;
+const howGameGoes = document.getElementById("howGameGoes");
+const gameScore = document.getElementById("gameScore");
 function computerPlays() {
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     if(randomNumber === 1) return "rock";
@@ -14,17 +16,18 @@ function playRound(e) {
     console.log("Computer: " + computerGuess);
     console.log("Player: "+ playerGuess);
     if(playerGuess===computerGuess) {
-        console.log("Draw");
+        howGameGoes.textContent = "It's a draw";
     }
     else if(playerGuess==="rock" && computerGuess==="scissors" || playerGuess==="paper" && computerGuess==="rock" || 
     playerGuess==="scissors" && computerGuess==="paper") {
         playerScore++;
-        console.log("You won");
+        howGameGoes.textContent = playerGuess + " beats " + computerGuess + ", you get a point";
     }
     else {
         computerScore++;
-        console.log("Computer won");
+        howGameGoes.textContent = computerGuess + " beats " + playerGuess + ", computer gets a point";
     }
+    gameScore.textContent = "Computer " + computerScore +":" + playerScore + " Player";
     checkWinner();
 }
 
@@ -33,6 +36,8 @@ const resetButton = document.getElementById("startGameButton");
 resetButton.addEventListener("click",()=> {
     playerScore = 0;
     computerScore = 0;
+    howGameGoes.textContent = "";
+    gameScore.textContent = "Computer 0:0 Player";
 });
 const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");

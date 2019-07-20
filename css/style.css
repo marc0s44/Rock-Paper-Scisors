@@ -31,7 +31,7 @@ button {
 .buttons {
     display: inline-block;
     float: right;
-    margin-right: 5%;
+    margin-right: 10%;
     margin-top: 2%; 
 }
 button:hover {
@@ -54,4 +54,10 @@ p {
     display: inline-block;
     margin-top: 2%;
     margin-left: 8em;
+}
+#howGameGoes, #gameScore {
+    text-align: center;
+}
+#score {
+    margin-top: 10em;
 }
